@@ -4,9 +4,10 @@ body{
 }
 .container{
     background-color: white;
-    border: 1px solid red;
-    max-width: 960px;
+    /* border: 1px solid red; */
+    max-width: 700px;
     margin: auto;
+    padding: 1rem;
 }
 
 .forma{
@@ -70,8 +71,8 @@ th{
 }
 
 tbody > tr> td:first-child
-thead > tr > td:first-child,
-thead > tr > td:last-child{
+thead > tr > th:first-child,
+thead > tr > th:last-child{
     text-align: center;
 }
 
