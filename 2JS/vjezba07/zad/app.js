@@ -9,11 +9,110 @@ document.getElementById('izvedi').addEventListener('click', () => {
   switch (zadatak) {
     case '1':
       // rješavanje 1. zadatak
+      //1. Za uneseni cijeli broj u polje A veći od 2 i manji od 10M ispiši da li je prim (prosti) broj ili ne.
 
-      // kraj rješavanje 1. zadatak
+
+      let a1 = Number(a);
+
+
+      if(!a1){
+        rezultat.innerHTML = "Nisi unio broj!";
+        return;
+      }
+
+      if(a1 < 2 || a1 > 10000000){
+        rezultat.innerHTML = "Broj nije u zadanom intervalu, ponovi unos.";
+        return;
+      }
+      //console.log(a1);
+
+      /*
+
+      6 % 2 = 0
+      6 % 3 = 0
+      6 % 4 = 2
+      6 % 5 = 1
+
+      6 nije prim broj
+
+      7 % 2 = 1
+      7 % 3 = 1
+      7 % 4 = 3
+      7 % 5 = 2
+      7 % 6 = 1
+
+      7 je prim broj
+
+      */
+
+      let prim = true;
+
+      for (let i = 2; i < a1; i++){
+        if(i%10000===0){
+          console.log(a1, '%', i, '=', a1 % i);
+        }
+        if (a1 % i === 0){
+          prim = false;
+          break;
+        }
+      }
+
+      if(prim){
+        rezultat.innerHTML = `${a1} je prim broj`;
+      }else{
+        rezultat.innerHTML = `${a1} nije prim broj`;
+      }
+
+
+// kraj rješavanje 1. zadatak
     break;
     case '2':
       // rješavanje 2. zadatak
+
+      // Za uneseni cijeli broj u polje B veći od 2 i manji od 1000 ispiši da li je savršen broj ili ne.
+
+      const b2 = Number(b)
+
+      if(!b2){
+        rezultat.innerHTML = 'Nisi unio broj!';
+        return
+      }
+
+      if(b2 < 2 || b2 > 1000){
+        rezultat.innerHTML = 'Broj nije u zadanom intervalu - ponovi unos.';
+        return
+      }
+
+      /*
+
+      6 % 1 = 0 + 1
+      6 % 2 = 0 + 2
+      6 % 3 = 0 + 3
+      6 % 4 = 2
+      6 % 5 = 1
+      1 + 2 + 3 = 6 -zato je 6 savršen broj
+
+      5 % 1 = 0 + 1
+      5 % 2 = 1
+      5 % 3 = 2
+      5 % 4 = 1
+      1 != 5 -zato 5 nije savršen broj
+
+      */
+
+      let sum = 0
+
+      for(let i = 1; i < b2; i++){
+        if(b2 % i === 0){
+        sum += i;
+        }
+      }
+
+      if(sum === b2){
+        rezultat.innerHTML=`${b2} je savršen broj`
+      }else{
+        rezultat.innerHTML=`${b2} nije savršen broj`
+      }
 
       // kraj rješavanje 2. zadatak
     break;
@@ -24,7 +123,32 @@ document.getElementById('izvedi').addEventListener('click', () => {
     break;
     case '4':
       // rješavanje 4. zadatak
+      // 4. Za unesenu riječ u polje A provjerite da li je palindrom ili ne
+      //Ružan Edo ode na žur
+      // ružanedoodenažur
+      let s = '';
+      for(let i=0; i<a.length; i++){
+      if(a[i]!=' '){
+        s+=a[i].toLowerCase()
+      }
+    }
+    console.log(s)
+    let duljina=s.length
+    let palindrom=true;
+    // 2. Prolazimo petljom do polovice duljine stringa
+    for (let i = 0; i < duljina / 2; i++) {
+      // Usporešujemo znak na poziciji i sa znakom na "suprotnoj" strani
+      if (s[i] !== s[duljina - 1 - i]) {
+        palindrom=false; // Čim nađemo par koji se ne podudara, prekidamo
+      }
+    }
+    if(palindrom){
+      rezultat.innerHTML='palindrom'
 
+    }
+    else{
+      rezultat.innerHTML='nije palindrom'
+    }
       // kraj rješavanje 4. zadatak
     break;
     case '5':
