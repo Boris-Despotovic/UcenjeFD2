@@ -1,4 +1,4 @@
-export const smjerovi=[
+export const smjerovi = [
     {
         sifra: 1,
         naziv: 'Web programiranje',
@@ -16,3 +16,4 @@ export const smjerovi=[
         aktivan: false
     }
 ]
+    
