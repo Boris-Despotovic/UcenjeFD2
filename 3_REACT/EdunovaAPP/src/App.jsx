@@ -5,7 +5,7 @@ import Izbornik from './components/Izbornik'
 import { Route, Routes } from 'react-router-dom'
 import { RouteNames } from './constants'
 import SmjerPregled from './pages/smjerovi/SmjerPregled'
-import Home from './pages/Home'
+import Home from './pages/Home.jsx'
 import SmjerNovi from './pages/smjerovi/SmjerNovi'
 import SmjerPromjena from './pages/smjerovi/SmjerPromjena'
 
